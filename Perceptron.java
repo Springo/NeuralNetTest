@@ -1,9 +1,9 @@
 class Perceptron
 {
-	public double value;
-	public Perceptron [] children;
-	public double[] weights;
-	public int numChild;
+	private double value;
+	private Perceptron [] children;
+	private double[] weights;
+	private int numChild;
 	
 	public Perceptron(double input)
 	{
@@ -11,13 +11,13 @@ class Perceptron
 		numChild = 0;
 	}
 
-	public Perceptron(double [] inputChild)
+	public Perceptron(Perceptron [] inputChild)
 	{
 		children = inputChild;
 		numChild = children.length;
 	}
 
-	public Perceptron(double [] inputChild, double inputWeight)
+	public Perceptron(Perceptron [] inputChild, double [] inputWeight)
 	{
 		children = inputChild;
 		weights = inputWeight;
@@ -26,10 +26,12 @@ class Perceptron
 	
 	public void updateValue()
 	{	
+		if (numChild == 0)
+			return;
 		double sum = 0;
 		for (int i = 0; i < numChild; i++)
 		{
-			sum += children[i]*weights[i];
+			sum += children[i].getValue()*weights[i];
 		}
 		value = sum;
 	}
@@ -41,6 +43,12 @@ class Perceptron
 
 	public double getValue()
 	{
+		updateValue();
 		return value;
+	}
+
+	public void setWeight(int child, double val)
+	{
+		weights[child] = val;
 	}
 }
