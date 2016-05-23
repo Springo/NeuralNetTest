@@ -15,6 +15,8 @@ class Perceptron
 	{
 		children = inputChild;
 		numChild = children.length;
+		for (int i = 0; i < numChild; i++)
+			weights[i] = 1;
 	}
 
 	public Perceptron(Perceptron [] inputChild, double [] inputWeight)
