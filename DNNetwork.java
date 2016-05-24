@@ -22,7 +22,7 @@ public class DNNetwork {
 			System.out.printf("Error: Invalid Input");
 			return 0.0;
 		}
-		for (int i = 0; i < inputs; i++) {
+		for (int i = 0; i < inputs.length; i++) {
 			inputs[i].updateValue(vals[i]);
 		}
 		return output.getValue();

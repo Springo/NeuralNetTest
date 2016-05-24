@@ -5,6 +5,12 @@ class Perceptron
 	private double[] weights;
 	private int numChild;
 	
+	public Perceptron()
+	{
+		value = 0.0;
+		numChild = 0;
+	}
+
 	public Perceptron(double input)
 	{
 		value = input;
