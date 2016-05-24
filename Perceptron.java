@@ -21,6 +21,7 @@ class Perceptron
 	{
 		children = inputChild;
 		numChild = children.length;
+		weights = new double[numChild];
 		for (int i = 0; i < numChild; i++)
 			weights[i] = 1;
 	}
