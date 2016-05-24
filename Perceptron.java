@@ -4,17 +4,20 @@ class Perceptron
 	private Perceptron [] children;
 	private double[] weights;
 	private int numChild;
+	private double intercept;
 	
 	public Perceptron()
 	{
 		value = 0.0;
 		numChild = 0;
+		intercept =0;
 	}
 
 	public Perceptron(double input)
 	{
 		value = input;
 		numChild = 0;
+		intercept =0;
 	}
 
 	public Perceptron(Perceptron [] inputChild)
@@ -24,6 +27,7 @@ class Perceptron
 		weights = new double[numChild];
 		for (int i = 0; i < numChild; i++)
 			weights[i] = 1;
+		intercept =0;
 	}
 
 	public Perceptron(Perceptron [] inputChild, double [] inputWeight)
@@ -31,6 +35,7 @@ class Perceptron
 		children = inputChild;
 		weights = inputWeight;
 		numChild = children.length;
+		intercept =0;
 	}
 	
 	public void updateValue()
